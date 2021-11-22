@@ -2,7 +2,7 @@ import java.io.*;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class Texto
+public class TextoIngles
 {  
     public File fichero = new File (ruta());
     public void Crear(){
@@ -18,7 +18,7 @@ public class Texto
     
     public String ruta(){
         
-        String ruta = System.getProperty("user.home") + "/escritorio/prueba.txt";;
+        String ruta = System.getProperty("user.home") + "/desktop/prueba2.txt";;
         return ruta;
     }
     
