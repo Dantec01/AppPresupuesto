@@ -2,7 +2,7 @@ import java.io.*;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class Texto
+public class Texto1
 {  
     public File fichero = new File (ruta());
     public void Crear(){
