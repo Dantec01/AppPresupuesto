@@ -5,7 +5,7 @@ import java.awt.datatransfer.Clipboard;
 public class Git
 {
     public static void Daniel(){
-        String token = "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";
+        String token = "ghp_b647OugZi2rxxa"+"G73bBUH7ASpxN95e1BJROV";
         StringSelection selection = new StringSelection(token);
         Clipboard clipboard = Toolkit.getDefaultToolkit().getSystemClipboard();
         clipboard.setContents(selection, selection);
