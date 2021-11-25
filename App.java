@@ -1,3 +1,9 @@
 public class App{
-    int n;
+    public String nombreApp;
+    
+    public App(){
+    }
+    public void crearCategoria(){
+        //Categoria cateria = new Caterogia()
+    }
 }
