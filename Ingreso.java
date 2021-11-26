@@ -1,13 +1,13 @@
 public class Ingreso extends Dinero {
  
-    public Ingreso(double ingreso, String description) {
+    public Ingreso(double ingreso, String descripcion) {
         this.dinero=ingreso;
-        this.description=description;
+        this.descripcion=descripcion;
     }
  
     @Override
     public String toString() {
-        return "Ingreso a su favor en concepto de " + this.description
+        return "Ingreso a su favor en concepto de " + this.descripcion
                 + ". Importe total: " + this.dinero ;
     } 
 }
