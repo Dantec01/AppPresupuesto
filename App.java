@@ -2,6 +2,7 @@ public class App{
     public String nombreApp;
     private double presupuestoMensual;
     private double SaldoAhorro;
+    private double prueba;
     public App(double presupuesto){
         presupuestoMensual = presupuesto;
     }
@@ -15,5 +16,10 @@ public class App{
     public String reporte(){  //llama la clase para generar el reporte si fuera necesario
         String mensaje = "Reporte generado con exito";
         return mensaje;
+    }
+    
+    public double getPrueba(){
+        prueba = 234;
+        return prueba;
     }
 }
