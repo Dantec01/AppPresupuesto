@@ -2,32 +2,32 @@
 public class Categoria
 {
     private String categoria;
-    private double ingresoIndividual;
-    private double gasto = 0;
-    private double gastoCat;   
+    private double ingresoCategoria;
+    private double gastoCategoria; 
+    private double gastoTotales = 0;
     public Categoria(){
         categoria = "Alimentación";
-        ingresoIndividual = 500;
-        gasto = 300;
-        calcularGastoIndividual();
+        ingresoCategoria = 500;
+        gastoCategoria = 300;
+        calcularGastoCategoria();
     }
-    public Categoria(String nombre, double ingreso, double gastoI){
+    public Categoria(String nombre, double ingreso, double gastoCat){
         categoria = nombre;
-        ingresoIndividual = ingreso;
-        gasto = gastoI;
-        calcularGastoIndividual();
+        ingresoCategoria = ingreso;
+        gastoCategoria = gastoCat;
+        calcularGastoCategoria();
     }
     public void setPresupuestoIndividual(int presu){
-        ingresoIndividual = presu;
-        calcularGastoIndividual();
+        ingresoCategoria = presu;
+        calcularGastoCategoria();
     }
-    public void setGastoIndividual(int gas){
-        gasto = gas;
-        calcularGastoIndividual();
+    public void setGastoCategoria(int gas){
+        gastoCategoria = gas;
+        calcularGastoCategoria();
     }
-    public double calcularGastoIndividual(){
-        gastoCat = ingresoIndividual - gasto;
-        return gastoCat;
+    public double calcularGastoCategoria(){
+        double resta= ingresoCategoria - gastoCategoria;
+        return resta;
     }
     
 }
