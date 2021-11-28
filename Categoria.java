@@ -4,8 +4,8 @@ public class Categoria
     private String categoria;
     private double ingresoCategoria;
     private double gastoCategoria; 
-    private double gastoTotales = 0;
-    public Categoria(){
+    private double gastoTotal = 0;
+    public Categoria(){             //constructor temporal para pruebas
         categoria = "Alimentación";
         ingresoCategoria = 500;
         gastoCategoria = 300;
@@ -17,17 +17,19 @@ public class Categoria
         gastoCategoria = gastoCat;
         calcularGastoCategoria();
     }
-    public void setPresupuestoIndividual(int presu){
-        ingresoCategoria = presu;
+    public void setIngresoCategoria(int presuesto){
+        ingresoCategoria = presuesto;
         calcularGastoCategoria();
     }
-    public void setGastoCategoria(int gas){
-        gastoCategoria = gas;
+    public void setGastoCategoria(int gasto){
+        gastoCategoria = gasto;
         calcularGastoCategoria();
     }
     public double calcularGastoCategoria(){
         double resta= ingresoCategoria - gastoCategoria;
         return resta;
     }
-    
+    public String mostrarDatos(){
+        return categoria + "\t" + ingresoCategoria + "\t" + gastoCategoria;
+    }
 }
