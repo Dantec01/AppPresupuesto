@@ -7,7 +7,7 @@ public abstract class Dinero {
         this.dinero = dinero;
     }
      
-    public void setDescription(String descripcion) {
+    public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
     }
  
