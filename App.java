@@ -2,10 +2,10 @@ import java.util.*;
 import java.util.ArrayList;
 
 public class App{
-    /*public String nombreApp;
+    public String nombreApp;
     private double presupuestoMensual;
     private ArrayList<Categoria>categoria = new ArrayList();
-    */
+    
     private static Scanner leer = new Scanner(System.in);
     private static int opcion;
     private static Usuario nuevoUsuario = new Usuario();
@@ -13,7 +13,7 @@ public class App{
     private static String emailAddress = "";
     private static boolean emailAddressValido = false;
     private static Cuenta nuevaCuenta;
-    public void main(String [] args){
+    public static void main(String [] args){
         //1. Crear el usuario, llamar al metodo introducirUsuario
         introducirUsuario();
         /*if(introducirUsuario()){
@@ -44,7 +44,7 @@ public class App{
         
     }
     
-    /*public App(double presupuesto){//Constructor para ingresar presupuesto
+    public App(double presupuesto){//Constructor para ingresar presupuesto
         presupuestoMensual = presupuesto;
     }
     public App(){//Constructor con 3500 de presupuesto
@@ -79,12 +79,12 @@ public class App{
     }
 
     /*Ethan creando reporte*/
-    /*public String reporte(){  //llama la clase para g0enerar el reporte si fuera necesario
+    public String reporte(){  //llama la clase para g0enerar el reporte si fuera necesario
         String mensaje = "Reporte generado con exito";
         return mensaje;
     }
     
     public ArrayList<Categoria> getCategoria() {
        return categoria;
-    }*/
+    }
 }
