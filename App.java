@@ -5,7 +5,6 @@ public class App{
     public String nombreApp;
     private double presupuestoMensual;
     private ArrayList<Categoria>categoria = new ArrayList();
-    private double SaldoAhorro;
     
     private static Scanner leer = new Scanner(System.in);
     private static int opcion;
@@ -22,7 +21,7 @@ public class App{
         }
     }
     
-        private static boolean introducirUsuario(){
+    private static boolean introducirUsuario(){
         //pidiendo nombre
         do{
             System.out.println("Introducir nombre de usuario:");
@@ -76,9 +75,6 @@ public class App{
     }
     public void setPresupuestoMensual(double presupuesto){
         presupuestoMensual = presupuesto;
-    }
-    public void SetcuentaAhorro(double montoAhorro){   //crea categoria ahorro
-        SaldoAhorro = montoAhorro;
     }
 
     /*Ethan creando reporte*/
