@@ -8,7 +8,6 @@ public class Calculadora
     private double ahorros;    
     
     public double getGuardar(){
-        boolean existe = false;
         if(restaTotal > 0){
             return restaTotal;
         }

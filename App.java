@@ -93,10 +93,14 @@ public class App{
     public void SetcuentaAhorro(double montoAhorro){   //crea categoria ahorro
         SaldoAhorro = montoAhorro;
     }
+
+    /*Ethan creando reporte*/
     public String reporte(){  //llama la clase para g0enerar el reporte si fuera necesario
         String mensaje = "Reporte generado con exito";
         return mensaje;
     }
     
-    
+    public ArrayList<Categoria> getCategoria() {
+       return categoria;
+    }
 }

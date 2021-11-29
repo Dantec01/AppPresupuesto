@@ -1,18 +1,24 @@
 import java.io.*;
 import java.util.Scanner;
+import java.util.ArrayList;
+
 public class escritor
 {
-    Texto texto = new Texto();
-    Scanner lector = new Scanner(System.in);
-    public void escritor() throws IOException{
+    Texto1 texto = new Texto1();
+    App categoria = new App();
+    private ArrayList <Categoria> categorias = new ArrayList();
+    
+    public static void escritor(){}
+    
+    
+    public void escribir() throws IOException {
         FileWriter fichero = new FileWriter(texto.ruta(),true);
-        fichero.write("\n"+lector.nextLine());
-        fichero.close();
-        /*if(!(texto.getFichero()).exists()){
-         
-        }
-        else{
-        }*/
+        
+        categorias = categoria.getCategoria();
+        
+        //fichero.write();
+        //fichero.close();
+
 
     }
 }
