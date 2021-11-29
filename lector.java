@@ -1,7 +1,7 @@
 import java.io.*;
 public class lector
 {
-    Texto texto = new Texto();
+    Texto1 texto = new Texto1();
     public void lector() throws IOException{
         String contenido;
         FileReader file = new FileReader(texto.ruta());
