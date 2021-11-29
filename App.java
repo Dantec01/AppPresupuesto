@@ -11,10 +11,8 @@ public class App{
     private static int opcion;
     private static Usuario nuevoUsuario = new Usuario();
     private static String nombreUsuario = "";
-    private static String edadUsuario = "";
-    private static int edadUsu = 0;
-    private static String nroCarnetUsu = "";
-    private static boolean nroCarnetValido = false;
+    private static String emailAddress = "";
+    private static boolean emailAddressValido = false;
     private static Cuenta nuevaCuenta;
     public void main(String [] Args){
         //1. Crear el usuario, llamar al metodo introducirUsuario
@@ -30,31 +28,20 @@ public class App{
             System.out.println("Introducir nombre de usuario:");
             nombreUsuario = leer.nextLine();
         }while(nombreUsuario.isEmpty());
-        //pidiendo edad
+        //pidiendo direccion de correo electronico
         do{
-            System.out.println("Introducir edad de usuario:");
-            edadUsuario = leer.nextLine();
-            try{
-                edadUsu = Integer.parseInt(edadUsuario);
-            }
-            catch(Exception e){
-                System.out.println("Debes introducir un numero mayor a 0 para la edad");
-                }
-        }while(edadUsuario.isEmpty()|| edadUsu>=10);
-        //pidiendo numero de carnet
-        do{
-            System.out.println("Introducir numero de carnet de usuario:");
-            nroCarnetUsu = leer.nextLine();
-            if (nuevoUsuario.setNroCarnett(nroCarnetUsu)==false){
-                nroCarnetValido = false;
-                System.out.println("Numero de carnet no valido");
+            System.out.println("Introducir correo electronico de usuario:");
+            emailAddress = leer.nextLine();
+            if (nuevoUsuario.setEmailAddres(emailAddress)==false){
+                emailAddressValido = false;
+                System.out.println("La direccion de correo electronico no es valido");
             }else{ 
-                nroCarnetValido = true;
+                emailAddressValido = true;
             }
-        }while(nroCarnetUsu.isEmpty()|| nroCarnetValido==false);
+        }while(emailAddress.isEmpty()|| emailAddressValido==false);
         nuevoUsuario.setNombre(nombreUsuario);
-        nuevoUsuario.setEdad(edadUsu);
         return true;
+        
     }
     
     public App(double presupuesto){//Constructor para ingresar presupuesto
