@@ -5,7 +5,7 @@ public class Ingreso extends Dinero {
         this.descripcion=descripcion;
     }
  
-    @Override
+    
     public String toString() {
         return "Ingreso a su favor en concepto de " + this.descripcion
                 + ". Importe total: " + this.dinero ;

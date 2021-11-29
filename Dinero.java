@@ -1,21 +1,19 @@
-public abstract class Dinero {
- 
+public abstract class Dinero{
     protected double dinero;
     protected String descripcion;
- 
-    public void setDinero(double dinero) {
+    public void setDinero(double dinero){
         this.dinero = dinero;
     }
      
-    public void setDescripcion(String descripcion) {
+    public void setDescripcion(String descripcion){
         this.descripcion = descripcion;
     }
  
-    public double getDinero() {
+    public double getDinero(){
         return dinero;
     }
  
-    public String getDescripcion() {
+    public String getDescripcion(){
         return descripcion;
     }
 }

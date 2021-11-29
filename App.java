@@ -57,10 +57,10 @@ public class App{
         return true;
     }
     
-    public App(double presupuesto){         //Constructor para ingresar presupuesto
+    public App(double presupuesto){//Constructor para ingresar presupuesto
         presupuestoMensual = presupuesto;
     }
-    public App(){       //Constructor con 3500 de presupuesto
+    public App(){//Constructor con 3500 de presupuesto
         presupuestoMensual = 3500;
     }
     public void crearCategoria(String a, int b, int c){  //llama a la clase categoria y le pasa parametros
@@ -72,7 +72,7 @@ public class App{
             System.out.println(e.mostrarDatos());
         }
     }
-    public void addCategoria(){    //añade categorias para hacer pruebas
+    public void addCategoria(){//añade categorias para hacer pruebas
         System.out.println("Categoria    " + "Presupuesto  " + "gasto" + "\n" + "\t");
         categoria.add(new Categoria("Alimentacion", 1000, 700));
         categoria.add(new Categoria("Servicios", 300, 150));
