@@ -32,6 +32,7 @@ public class App{
         do{
             System.out.println("Introducir correo electronico de usuario:");
             emailAddress = leer.nextLine();
+            //valida el correo electronico
             if (nuevoUsuario.setEmailAddres(emailAddress)==false){
                 emailAddressValido = false;
                 System.out.println("La direccion de correo electronico no es valido");
@@ -41,7 +42,6 @@ public class App{
         }while(emailAddress.isEmpty()|| emailAddressValido==false);
         nuevoUsuario.setNombre(nombreUsuario);
         return true;
-        
     }
     
     public App(double presupuesto){//Constructor para ingresar presupuesto

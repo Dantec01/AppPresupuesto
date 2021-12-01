@@ -4,7 +4,7 @@ public class CuentaAhorro
     Calculadora calc = new Calculadora();
     private double sumaDinero;
     
-    public void cuentaAhorro(){
+    public CuentaAhorro(){
     
     }
     
