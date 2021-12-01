@@ -51,9 +51,8 @@ public class App{
         presupuestoMensual = 3500;
     }
     public void crearCategoria(String a, int b, int c){  //llama a la clase categoria y le pasa parametros
-        //Categoria cateria = new Caterogia()
         categoria.add(new Categoria(a,b,c));
-        
+        //if ()
         for (Categoria e: categoria){
             
             System.out.println(e.mostrarDatos());
