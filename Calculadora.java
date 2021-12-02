@@ -22,6 +22,17 @@ public class Calculadora
         ahorros = ahorro.getRetirar();
     }
     
+    public void calcularCategoria(ArrayList<Categoria> Cat){
+        int numero1 = listaCat.get(0).getIngreso();
+        //ArrayList<Categoria>listaCat = 0; 
+    }
+    public void calcularCategoria(){
+        for (int i = 0; i<listaCat.size();i++){
+            System.out.println(listaCat.get(i)); 
+        }
+    }
+    
+    
     //-----------------------------------
     
     /*public double Calculadora(){

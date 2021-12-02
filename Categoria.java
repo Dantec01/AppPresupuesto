@@ -5,6 +5,7 @@ public class Categoria
     private double ingresoCategoria;
     private double gastoCategoria; 
     private double gastoTotal = 0;
+    
     public Categoria(){             //constructor temporal para pruebas
         categoria = "Alimentación";
         ingresoCategoria = 500;
