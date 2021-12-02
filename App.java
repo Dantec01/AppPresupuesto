@@ -83,7 +83,9 @@ public class App{
         return mensaje;
     }
     
-    public ArrayList<Categoria> getCategoria() {
+    public ArrayList getCategoria() {
        return categoria;
     }
+    
+    
 }

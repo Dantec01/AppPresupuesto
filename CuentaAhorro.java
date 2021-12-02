@@ -1,7 +1,7 @@
 
 public class CuentaAhorro
 {
-    Calculadora calc = new Calculadora();
+    /*Calculadora calc = new Calculadora();
     private double sumaDinero;
     
     public void cuentaAhorro(){
@@ -18,5 +18,5 @@ public class CuentaAhorro
         else{
             return 0;
         }
-    }
+    }*/
 }
