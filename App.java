@@ -4,7 +4,7 @@ import java.util.ArrayList;
 public class App{
     public String nombreApp;
     private double presupuestoMensual;
-    private ArrayList<Categoria>categoria = new ArrayList();
+    private ArrayList<Categoria>categoria;
     
     private static Scanner leer = new Scanner(System.in);
     private static int opcion;
@@ -13,6 +13,7 @@ public class App{
     private static String emailAddress = "";
     private static boolean emailAddressValido = false;
     private static Cuenta nuevaCuenta;
+    
     public static void main(String [] args){
         //1. Crear el usuario, llamar al metodo introducirUsuario
         introducirUsuario();
@@ -59,20 +60,22 @@ public class App{
         }
     }
     public void addCategoria(){//añade categorias para hacer pruebas
-        System.out.println("Categoria    " + "Presupuesto  " + "gasto" + "\n" + "\t");
+        categoria = new ArrayList();
         categoria.add(new Categoria("Alimentacion", 1000, 700));
         categoria.add(new Categoria("Servicios", 300, 150));
         categoria.add(new Categoria("Transporte", 300, 250));
         categoria.add(new Categoria("Entreteniento", 300, 200));
         categoria.add(new Categoria("Alquiler", 1000, 1000));
         categoria.add(new Categoria("Internet", 200, 190));
-        for (Categoria e: categoria){
-            System.out.println(e.mostrarDatos());
-        }
+        //calc.obtenerCategoria(categoria);
+
     }
+    
+
     public double getPresupuestoMensual(){
         return presupuestoMensual;
     }
+    
     public void setPresupuestoMensual(double presupuesto){
         presupuestoMensual = presupuesto;
     }
@@ -84,8 +87,11 @@ public class App{
     }
     
     public ArrayList getCategoria() {
-       return categoria;
+        categoria = new ArrayList<Categoria>();
+        //Aquí escribes el código con el que quieras rellenar la ArrayList
+        return categoria;
+       }
     }
     
     
-}
+
