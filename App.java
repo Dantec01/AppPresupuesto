@@ -15,7 +15,6 @@ public class App{
     private static Cuenta nuevaCuenta;
     public static void main(String [] args){
         //1. Crear el usuario, llamar al metodo introducirUsuario
-        introducirUsuario();
         /*if(introducirUsuario()){
             //Creamos cuenta
             nuevaCuenta = new Cuenta();
@@ -51,9 +50,8 @@ public class App{
         presupuestoMensual = 3500;
     }
     public void crearCategoria(String a, int b, int c){  //llama a la clase categoria y le pasa parametros
-        //Categoria cateria = new Caterogia()
         categoria.add(new Categoria(a,b,c));
-        
+        //if ()
         for (Categoria e: categoria){
             
             System.out.println(e.mostrarDatos());
