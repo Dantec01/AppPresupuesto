@@ -9,6 +9,7 @@ public class App
     private Calculadora calculadora;
     private int gastoTotal;
     private int saldo;
+    private String [] values;
     //private Fecha mes;
     public App(){
         listaCat = new ArrayList<Categoria>();
@@ -48,7 +49,7 @@ public class App
         for (int i = 0; i < listaCat.size(); i++){
             int resta = calculadora.gastoPorCategoria((listaCat.get(i).getIngreso()), (listaCat.get(i).getGasto()));
             gastoTotal += resta;
-            System.out.println(resta);
+            System.out.println(listaCat.get(i)+" - "+resta);
         }
         //calculator.setGastoTotal(aux);
         System.out.println("Gasto total: " + gastoTotal + " Saldo: " + saldo);
@@ -72,4 +73,16 @@ public class App
         String getMes = sdf.format(mes);
         return getMes;
     }*/
+    
+    public void generarReporte(){
+        this.values = new String[listaCat.size()];
+        for (int i = 0; i < listaCat.size(); i++) {
+            values[i] = listaCat.get(i).toString();
+            //System.out.println(categoria.get(i).toString());
+        }
+    }
+    
+    public String[] getReporte(){
+        return values;
+    }
 }

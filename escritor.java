@@ -29,11 +29,11 @@ public class escritor
     public void escribir() throws IOException {
         FileWriter fichero = new FileWriter(escritor.ruta(),true);
         receptorReporte = app.getReporte();
-        for(int i = 0; i < receptorReporte.length; i++){
+        /*for(int i = 0; i < receptorReporte.length; i++){
             fichero.write("\n" + receptorReporte[i]);
             //fichero.close();
 
-        }
+        }*/
     }
     
     public static String ruta(){
