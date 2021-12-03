@@ -1,5 +1,6 @@
 import java.util.*;
 import java.util.ArrayList;
+import java.io.*;
 
 public class App{
     public String nombreApp;
@@ -13,7 +14,8 @@ public class App{
     private static String emailAddress = "";
     private static boolean emailAddressValido = false;
     private static Cuenta nuevaCuenta;
-    private String reporte;
+    private String []reporte; 
+
     
     public static void main(String [] args){
         //1. Crear el usuario, llamar al metodo introducirUsuario
@@ -49,9 +51,11 @@ public class App{
     public App(double presupuesto){//Constructor para ingresar presupuesto
         presupuestoMensual = presupuesto;
     }
+    
     public App(){//Constructor con 3500 de presupuesto
         presupuestoMensual = 3500;
     }
+    
     public void crearCategoria(String a, int b, int c){  //llama a la clase categoria y le pasa parametros
         categoria.add(new Categoria(a,b,c));
         //if ()
@@ -91,14 +95,28 @@ public class App{
         //Aquí escribes el código con el que quieras rellenar la ArrayList
         return categoria;
        }
-    
-    public void reporte(){
-        
-        for (int i = 0; i < categoria.size(); i++){
-            categoria.get(i);
-            reporte = categoria.get(i).toString();
+
+    public void generarReporte(){
+        this.reporte = new String[categoria.size()];
+        for (int i = 0; i < categoria.size(); i++) {
+            reporte[i] = categoria.get(i).toString();
+            //System.out.println(categoria.get(i).toString());
         }
-        System.out.println (reporte);
+    }
+    
+    public String[] getReporte(){
+        return reporte;
+    }
+    
+        public void lector() throws IOException{
+        String contenido;
+        FileReader file = new FileReader(escritor.ruta());
+        BufferedReader buffer = new BufferedReader(file);
+        while((contenido = buffer.readLine())!= null){
+            System.out.println(contenido);
+        }
+        file.close();
+        buffer.close();
     }
     }
     
