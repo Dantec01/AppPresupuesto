@@ -33,4 +33,8 @@ public class Categoria
     public String mostrarDatos(){
         return categoria + "\t" + ingresoCategoria + "\t" + gastoCategoria;
     }
+    @Override
+    public String toString(){
+        return categoria + "\t" + ingresoCategoria + "\t" + gastoCategoria;
+    }
 }
