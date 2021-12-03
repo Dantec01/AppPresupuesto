@@ -4,14 +4,11 @@ import java.util.*;
 
 public class escritor
 {
-    private  String[] receptorReporte;
     private File fichero = new File (ruta());
-    
     
     public static void escritor(){
 
     }
-    
 
     public void Crear(){
         try {
@@ -23,17 +20,6 @@ public class escritor
              } catch (IOException ioe) {
               ioe.printStackTrace();
         }
-    }
-    
-    
-    public void escribir() throws IOException {
-        FileWriter fichero = new FileWriter(escritor.ruta(),true);
-        //receptorReporte = new String[app.getReporte()];
-        /*for(int i = 0; i < receptorReporte.length; i++){
-            fichero.write("\n" + receptorReporte[i]);
-            //fichero.close();
-
-        }*/
     }
     
     public static String ruta(){
