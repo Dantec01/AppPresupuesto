@@ -81,9 +81,8 @@ public class App{
     }
 
     /*Ethan creando reporte*/
-    public String reporte(){  //llama la clase para g0enerar el reporte si fuera necesario
-        String mensaje = "Reporte generado con exito";
-        return mensaje;
+    public void reporte(){  //llama la clase para g0enerar el reporte si fuera necesario
+        escritor.escribir(categoria);
     }
     
     public ArrayList getCategoria() {
