@@ -54,6 +54,9 @@ public class App
         //calculator.setGastoTotal(aux);
         System.out.println("Gasto total: " + gastoTotal + " Saldo: " + saldo);
     }
+    public int getSaldo(){
+        return saldo;    
+    }
     public void calcularSaldo(){
         saldo = calculadora.calcularSaldo(presupuesto, gastoTotal);
         System.out.println(saldo);
