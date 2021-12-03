@@ -20,12 +20,12 @@ public class Calculadora
     public void setSaldo(int saldo){
         this.saldo = saldo;
     }
-    public int gastoPorCategoria(int num1, int num2){
+    public int resta(int num1, int num2){
         int res = num1 - num2;
         return res;
     }
-    public int calcularSaldo(int valor1, int valor2){
-        int res = valor1 - valor2;
+    public int suma(int valor1, int valor2){
+        int res = valor1 + valor2;
         return res;
     }
 }

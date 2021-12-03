@@ -47,22 +47,26 @@ public class App
         System.out.println(e);
         }
     }
-    public void calcularGastoCategoria(){
-        int ingreso = listaCat.get(1).getIngreso();
-        int gasto = listaCat.get(1).getGasto();
+    public void calcularSaldo(){
+        //int num1 = listaCat.get(1).getIngreso();
+        //int num2 = listaCat.get(1).getGasto();
         for (int i = 0; i < listaCat.size(); i++){
-            int gastoCategoria = calculadora.gastoPorCategoria(ingreso, gasto);
-            gastoTotal += gastoCategoria;
-            System.out.println(listaCat.get(i)+" - "+gastoCategoria);
+            saldo = calculadora.resta((listaCat.get(i).getIngreso()), (listaCat.get(i).getGasto()));
+            gastoTotal += saldo;
+            System.out.println(saldo);
         }
+        //calculator.setGastoTotal(aux);
         System.out.println("Gasto total: " + gastoTotal + " Saldo: " + saldo);
     }
     public int getSaldo(){
         return saldo;    
     }
-    public void calcularSaldo(){
-        saldo = calculadora.calcularSaldo(presupuesto, gastoTotal);
-        System.out.println(saldo);
+    public void calcularGastoTotal(){
+        for (int i = 0; i < listaCat.size(); i++){
+            int gastoPorCategoria = (listaCat.get(i).getGasto());
+            gastoTotal += gastoPorCategoria;
+            System.out.println(gastoPorCategoria + "\n" + gastoTotal);
+        }
     }
     public void mostrar(){
         System.out.println("Ind" + "\t" + "Categoria   " + "Presupuesto  " + "gasto" + "\n" + "\t");
@@ -74,11 +78,6 @@ public class App
     public ArrayList<Categoria> getCategoria() {
         return listaCat;
     }
-    /*public String getMes(){
-        SimpleDateFormat sdf = new SimpleDateFormat("MM");
-        String getMes = sdf.format(mes);
-        return getMes;
-    }*/
     
     public void generarReporte(){
         this.values = new String[listaCat.size()];
