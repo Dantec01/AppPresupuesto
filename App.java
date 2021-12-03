@@ -1,9 +1,10 @@
+
 import java.util.*;
 import java.io.*;
 //import java.text.SimpleDateFormat;
 public class App
 {
-    private String nombre = "Survivor";
+    private String nombre = "Expense Control";
     private Usuario persona;
     private int presupuesto = 3500;
     private ArrayList<Categoria> listaCat;// = new ArrayList();
@@ -20,10 +21,10 @@ public class App
         escritor1 = new escritor();
     }
     public void addCategoria(){
-        listaCat.add(new Categoria("Alimentacion", 1000, 700));
-        listaCat.add(new Categoria("Servicios", 300, 150));
+        listaCat.add(new Categoria("Alimentacion", 1500, 1200));
+        listaCat.add(new Categoria("Servicios", 300, 250));
         listaCat.add(new Categoria("Transporte", 300, 250));
-        listaCat.add(new Categoria("Entretenimiento", 300, 200));
+        listaCat.add(new Categoria("Entretenimiento", 200, 150));
         listaCat.add(new Categoria("Alquiler", 1000, 1000));
         listaCat.add(new Categoria("Internet", 200, 190));
         for (int i = 0; i < listaCat.size(); i++){
@@ -47,14 +48,13 @@ public class App
         }
     }
     public void calcularGastoCategoria(){
-        //int num1 = listaCat.get(1).getIngreso();
-        //int num2 = listaCat.get(1).getGasto();
+        int ingreso = listaCat.get(1).getIngreso();
+        int gasto = listaCat.get(1).getGasto();
         for (int i = 0; i < listaCat.size(); i++){
-            int resta = calculadora.gastoPorCategoria((listaCat.get(i).getIngreso()), (listaCat.get(i).getGasto()));
-            gastoTotal += resta;
-            System.out.println(listaCat.get(i)+" - "+resta);
+            int gastoCategoria = calculadora.gastoPorCategoria(ingreso, gasto);
+            gastoTotal += gastoCategoria;
+            System.out.println(listaCat.get(i)+" - "+gastoCategoria);
         }
-        //calculator.setGastoTotal(aux);
         System.out.println("Gasto total: " + gastoTotal + " Saldo: " + saldo);
     }
     public int getSaldo(){
