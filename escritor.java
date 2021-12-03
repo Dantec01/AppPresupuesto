@@ -1,16 +1,15 @@
 import java.io.*;
-import java.util.Scanner;
-import java.util.ArrayList;
+import java.util.*;
+
 
 public class escritor
 {
-    App app = new App();
     private  String[] receptorReporte;
     private File fichero = new File (ruta());
     
     
     public static void escritor(){
-        
+
     }
     
 
@@ -26,9 +25,10 @@ public class escritor
         }
     }
     
+    
     public void escribir() throws IOException {
         FileWriter fichero = new FileWriter(escritor.ruta(),true);
-        receptorReporte = app.getReporte();
+        //receptorReporte = new String[app.getReporte()];
         /*for(int i = 0; i < receptorReporte.length; i++){
             fichero.write("\n" + receptorReporte[i]);
             //fichero.close();

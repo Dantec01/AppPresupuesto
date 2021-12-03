@@ -1,4 +1,5 @@
-import java.util.ArrayList;
+import java.util.*;
+import java.io.*;
 //import java.text.SimpleDateFormat;
 public class App
 {
@@ -7,6 +8,7 @@ public class App
     private int presupuesto = 3500;
     private ArrayList<Categoria> listaCat;// = new ArrayList();
     private Calculadora calculadora;
+    private escritor escritor1;
     private int gastoTotal;
     private int saldo;
     private String [] values;
@@ -15,6 +17,7 @@ public class App
         listaCat = new ArrayList<Categoria>();
         calculadora = new Calculadora();
         persona = new Usuario();
+        escritor1 = new escritor();
     }
     public void addCategoria(){
         listaCat.add(new Categoria("Alimentacion", 1000, 700));
@@ -79,10 +82,30 @@ public class App
         for (int i = 0; i < listaCat.size(); i++) {
             values[i] = listaCat.get(i).toString();
             //System.out.println(categoria.get(i).toString());
-        }
+        }   
     }
     
     public String[] getReporte(){
-        return values;
+        return Arrays.copyOf(values, values.length);
+    }
+    
+    public void generarReporte2() throws IOException{
+        escritor1.Crear();
+        FileWriter fichero = new FileWriter(escritor1.ruta());
+        for(int i = 0; i < values.length; i++){
+            fichero.write(  values[i] + "\n" + "\t" );
+            
+
+        }
+        fichero.close();
+        String contenido;
+        FileReader file = new FileReader(escritor1.ruta());
+        BufferedReader buffer = new BufferedReader(file);
+        while((contenido = buffer.readLine())!= null){
+            System.out.println(contenido);
+        }
+        file.close();
+        buffer.close();
+    
     }
 }
