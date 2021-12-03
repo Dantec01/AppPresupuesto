@@ -1,59 +1,31 @@
-import java.io.*;
 import java.util.ArrayList;
-import java.util.Arrays;
 
 public class Calculadora
 {
-    //variables y metodos de prueba
-    CuentaAhorro ahorro = new CuentaAhorro();
-    private double restaTotal = 1000;
-    private double ahorros;  
-    private Arrays[] categorias1;
-    
-    /*
-    public void obtenerCategoria(ArrayList <Categoria> categorias){
-        //categorias = categoria.getCategoria();
-        categorias1 = categorias.toArray();
+    private int gastoTotal;
+    private int saldo;
+    public Calculadora(){
+        gastoTotal = 0;
+        saldo = 0;
     }
-    public void calcularCategoria(){
-        for (int i = 0; i < categorias1.size(); i++){
-            System.out.println(categorias1.get(i).toString());
-            //System.out.println(categoria.get(i).getNombre());
-        }
-    }*/
-    
-    
-    //-----------------------------------
-    
-    /*public double Calculadora(){
-        
+    public int getGastoTotal(){
+        return gastoTotal;
     }
-    
-    public double calcularCategoria(){
-        
+    public void setGastoTotal(int gasto){
+        gastoTotal = gasto;
     }
-    
-    public double calcularTotalGastos(){
-        
-    }*/
-    /*
-    public double getGuardar(){
-        if(restaTotal > 0){
-            return restaTotal;
-        }
-        else{
-            return 0;
-        }
-    
-
+    public int getSaldo(){
+        return saldo;
     }
-    
-    public void retirar(){
-        ahorros = ahorro.getRetirar();
+    public void setSaldo(int saldo){
+        this.saldo = saldo;
     }
-    */
-    /*public void calcularCategoria(ArrayList<Categoria> Cat){
-        int numero1 = listaCat.get(0).getIngreso();
-        //ArrayList<Categoria>listaCat = 0; 
-    }*/
+    public int gastoPorCategoria(int num1, int num2){
+        int res = num1 - num2;
+        return res;
+    }
+    public int calcularSaldo(int valor1, int valor2){
+        int res = valor1 - valor2;
+        return res;
+    }
 }

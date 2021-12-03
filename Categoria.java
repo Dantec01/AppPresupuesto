@@ -1,40 +1,34 @@
 
-public class Categoria
-{
-    private String categoria;
-    private double ingresoCategoria;
-    private double gastoCategoria; 
-    private double gastoTotal = 0;
+public class Categoria{
+    private String nombre;
+    private int ingreso;
+    private int gasto;
     
-    public Categoria(){             //constructor temporal para pruebas
-        categoria = "Alimentación";
-        ingresoCategoria = 500;
-        gastoCategoria = 300;
-        calcularGastoCategoria();
+    public Categoria(String nombre, int ingreso, int gasto){
+        this.nombre = nombre;
+        this.ingreso = ingreso;
+        this.gasto = gasto;
     }
-    public Categoria(String nombre, double ingreso, double gastoCat){
-        categoria = nombre;
-        ingresoCategoria = ingreso;
-        gastoCategoria = gastoCat;
-        calcularGastoCategoria();
+    public String getNombre(){
+        return nombre;
     }
-    public void setIngresoCategoria(int presuesto){
-        ingresoCategoria = presuesto;
-        calcularGastoCategoria();
+    public void setNombre(String nombre){
+        this.nombre = nombre;
     }
-    public void setGastoCategoria(int gasto){
-        gastoCategoria = gasto;
-        calcularGastoCategoria();
+    public int getIngreso(){
+        return ingreso;
     }
-    public double calcularGastoCategoria(){
-        double resta= ingresoCategoria - gastoCategoria;
-        return resta;
+    public void setIngreso(int ingreso){
+        this.ingreso = ingreso;
     }
-    public String mostrarDatos(){
-        return categoria + "\t" + ingresoCategoria + "\t" + gastoCategoria;
+    public int getGasto(){
+        return gasto;
+    }
+    public void setGasto(int gasto){
+        this.gasto = gasto;
     }
     @Override
     public String toString(){
-        return categoria + "\t" + ingresoCategoria + "\t" + gastoCategoria;
+        return nombre + "\t" + ingreso + "\t" + gasto;
     }
 }
