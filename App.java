@@ -13,6 +13,7 @@ public class App{
     private static String emailAddress = "";
     private static boolean emailAddressValido = false;
     private static Cuenta nuevaCuenta;
+    private String reporte;
     
     public static void main(String [] args){
         //1. Crear el usuario, llamar al metodo introducirUsuario
@@ -81,15 +82,24 @@ public class App{
     }
 
     /*Ethan creando reporte*/
-    public void reporte(){  //llama la clase para g0enerar el reporte si fuera necesario
+    /*public void reporte(){  //llama la clase para g0enerar el reporte si fuera necesario
         escritor.escribir(categoria);
-    }
+    }*/
     
     public ArrayList getCategoria() {
         categoria = new ArrayList<Categoria>();
         //Aquí escribes el código con el que quieras rellenar la ArrayList
         return categoria;
        }
+    
+    public void reporte(){
+        
+        for (int i = 0; i < categoria.size(); i++){
+            categoria.get(i);
+            reporte = categoria.get(i).toString();
+        }
+        System.out.println (reporte);
+    }
     }
     
     

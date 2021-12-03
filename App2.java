@@ -71,3 +71,4 @@ public class App
     public ArrayList<Categoria> getCategoria() {
         return listaCat;
     }
+    
