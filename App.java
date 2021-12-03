@@ -48,15 +48,14 @@ public class App
         }
     }
     public void calcularSaldo(){
-        //int num1 = listaCat.get(1).getIngreso();
-        //int num2 = listaCat.get(1).getGasto();
+        int saldoPorCategoria = 0;
         for (int i = 0; i < listaCat.size(); i++){
-            saldo = calculadora.resta((listaCat.get(i).getIngreso()), (listaCat.get(i).getGasto()));
-            gastoTotal += saldo;
-            System.out.println(saldo);
+            saldoPorCategoria = ((listaCat.get(i).getIngreso()) - (listaCat.get(i).getGasto()));
+            saldo += saldoPorCategoria;
+            System.out.println(saldoPorCategoria);
         }
         //calculator.setGastoTotal(aux);
-        System.out.println("Gasto total: " + gastoTotal + " Saldo: " + saldo);
+        System.out.println("Saldo: " + saldo);
     }
     public int getSaldo(){
         return saldo;    
@@ -65,9 +64,21 @@ public class App
         for (int i = 0; i < listaCat.size(); i++){
             int gastoPorCategoria = (listaCat.get(i).getGasto());
             gastoTotal += gastoPorCategoria;
-            System.out.println(gastoPorCategoria + "\n" + gastoTotal);
+            System.out.println(gastoPorCategoria);
         }
+        System.out.println("Gasto Total: " + gastoTotal);
     }
+    public int ahorro(){
+        calcularSaldo();
+        int saldoAhorro = 0;
+        if(saldo>0){
+            saldoAhorro += saldo;
+        }else{
+            
+        }
+        return saldoAhorro;
+    }
+
     public void mostrar(){
         System.out.println("Ind" + "\t" + "Categoria   " + "Presupuesto  " + "gasto" + "\n" + "\t");
         for (int i = 0; i < listaCat.size(); i++){
