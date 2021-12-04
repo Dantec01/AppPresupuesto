@@ -18,13 +18,13 @@ public class App{
         //import java.text.SimpleDateFormat;
     }
     public App{
-    private String nombre = "Survivor";
-    private Usuario persona;
-    private int presupuesto = 3500;
-    private ArrayList<Categoria> listaCat;// = new ArrayList();
-    private Calculadora calculadora;
-    private int gastoTotal;
-    private int saldo;
+        private String nombre = "Survivor";
+        private Usuario persona;
+        private int presupuesto = 3500;
+        private ArrayList<Categoria> listaCat;// = new ArrayList();
+        private Calculadora calculadora;
+        private int gastoTotal;
+        private int saldo;
     private String [] values;
     //private Fecha mes;
     }

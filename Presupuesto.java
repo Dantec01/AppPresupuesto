@@ -94,11 +94,7 @@ public class Presupuesto
     }
     
     public void generarReporte(){
-        this.values = new String[listaCat.size()];
-        for (int i = 0; i < listaCat.size(); i++) {
-            values[i] = listaCat.get(i).toString();
-            //System.out.println(categoria.get(i).toString());
-        }   
+ 
     }
     
     public String[] getReporte(){
@@ -107,6 +103,11 @@ public class Presupuesto
     
     public void generarReporte2() throws IOException{
         escritor1.Crear();
+        this.values = new String[listaCat.size()];
+        for (int i = 0; i < listaCat.size(); i++) {
+            values[i] = listaCat.get(i).toString();
+            //System.out.println(categoria.get(i).toString());
+        }  
         FileWriter fichero = new FileWriter(escritor1.ruta());
         for(int i = 0; i < values.length; i++){
             fichero.write(  values[i] + "\n" + "\t" );
