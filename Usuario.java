@@ -42,7 +42,7 @@ public class Usuario
         }
         
     } 
-    private static boolean introducirUsuario(){
+    /*private static boolean introducirUsuario(){
         //pidiendo nombre
         do{
             System.out.println("Introducir nombre de usuario:");
@@ -61,5 +61,5 @@ public class Usuario
         }while(emailAddress.isEmpty()|| emailAddressValido==false);
         nuevoUsuario.setNombre(nombreUsuario);
                 return true;
-    }
+    }*/
 }
