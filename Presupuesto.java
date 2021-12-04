@@ -9,7 +9,7 @@ public class Presupuesto
     private int presupuesto = 3500;
     private ArrayList<Categoria> listaCat;// = new ArrayList();
     //private Calculadora calculadora;
-    private escritor escritor1;
+    private Escritor escritor1;
     private int gastoTotal;
     private int saldo;
     private String [] values;
@@ -19,7 +19,7 @@ public class Presupuesto
         listaCat = new ArrayList();//ArrayList<Categoria>();
         //calculadora = new Calculadora();
         persona = new Usuario();
-        escritor1 = new escritor();
+        escritor1 = new Escritor();
     }
     public void addCategoria(){   //para pruebas solamente
         listaCat.add(new Categoria("Alimentacion", 1500, 1200));
@@ -92,11 +92,7 @@ public class Presupuesto
     public ArrayList<Categoria> getCategoria() {
         return listaCat;
     }
-    
-    public void generarReporte(){
- 
-    }
-    
+
     public String[] getReporte(){
         return Arrays.copyOf(values, values.length);
     }
