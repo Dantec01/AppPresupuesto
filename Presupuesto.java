@@ -9,7 +9,7 @@ public class Presupuesto
     private int presupuesto = 3500;
     private ArrayList<Categoria> listaCat;// = new ArrayList();
     //private Calculadora calculadora;
-    private Escritor escritor1;
+    private Archivo archivo;
     private int gastoTotal;
     private int saldo;
     private String [] values;
@@ -19,7 +19,7 @@ public class Presupuesto
         listaCat = new ArrayList();//ArrayList<Categoria>();
         //calculadora = new Calculadora();
         persona = new Usuario();
-        escritor1 = new Escritor();
+        archivo = new Archivo();
     }
     public void addCategoria(){   //para pruebas solamente
         listaCat.add(new Categoria("Alimentacion", 1500, 1200));
@@ -98,13 +98,13 @@ public class Presupuesto
     }
     
     public void generarReporte2() throws IOException{
-        escritor1.Crear();
+        archivo.archivoCrear();
         this.values = new String[listaCat.size()];
         for (int i = 0; i < listaCat.size(); i++) {
             values[i] = listaCat.get(i).toString();
             //System.out.println(categoria.get(i).toString());
         }  
-        FileWriter fichero = new FileWriter(escritor1.ruta());
+        FileWriter fichero = new FileWriter(archivo.ruta());
         for(int i = 0; i < values.length; i++){
             fichero.write(  values[i] + "\n" + "\t" );
             
@@ -112,7 +112,7 @@ public class Presupuesto
         }
         fichero.close();
         String contenido;
-        FileReader file = new FileReader(escritor1.ruta());
+        FileReader file = new FileReader(archivo.ruta());
         BufferedReader buffer = new BufferedReader(file);
         while((contenido = buffer.readLine())!= null){
             System.out.println(contenido);
