@@ -8,16 +8,16 @@ public class Presupuesto
     private Usuario persona;
     private int presupuesto = 3500;
     private ArrayList<Categoria> listaCat;// = new ArrayList();
-    private Calculadora calculadora;
+    //private Calculadora calculadora;
     private escritor escritor1;
     private int gastoTotal;
     private int saldo;
     private String [] values;
-    private Ahorro ahorro = new Ahorro();
+    
     //private Fecha mes;
     public Presupuesto(){
         listaCat = new ArrayList();//ArrayList<Categoria>();
-        calculadora = new Calculadora();
+        //calculadora = new Calculadora();
         persona = new Usuario();
         escritor1 = new escritor();
     }
