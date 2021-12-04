@@ -12,7 +12,13 @@ public class TestCategoria
         categoria = new Categoria("Alimentacion", 1500, 1200);
     }
     @Test
-    public void crearCategoria(){
-        assertEquals("", categoria.getNombre());
+    public void agregarCategoria(){
+        assertEquals("Alimentacion", categoria.getNombre());
+        assertEquals(1500, categoria.getIngreso());
+        assertEquals(1200, categoria.getGasto());
+    }
+    @Test
+    public void aCategoria(){
+        assertEquals("Alimentacion", 1500, 1200, categoria);
     }
 }

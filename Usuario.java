@@ -14,7 +14,7 @@ public class Usuario
     public Usuario(){
         usuario = "Tomas";
         emailA = "tomas@gmail.com";
-        introducirUsuario();
+        //introducirUsuario();
     }
     public void setUsuario(String usuario){
         this.usuario = usuario;
