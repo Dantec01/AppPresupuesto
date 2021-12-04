@@ -4,6 +4,7 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import java.util.ArrayList;
+import static java.util.Arrays.asList;
 
 public class TestPresupuesto
 {
@@ -12,8 +13,10 @@ public class TestPresupuesto
         presupuesto = new Presupuesto(); 
     }
     @Test
-    public void agregarPresupuesto(){
+    public void agregarCategoria(){
         //Presupuesto presupuesto = new Presupuesto(); 
-        ArrayList<Categoria>listaCat = new ArrayList("Alimentacion", 1500, 1200);
+        listaCat.add(new Categoria("Alimentacion", 1500, 1200));
+        
+        assertArrayEquals(Categoria);
     }
 }
