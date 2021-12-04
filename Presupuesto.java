@@ -9,7 +9,7 @@ public class Presupuesto
     private int presupuesto = 3500;
     private ArrayList<Categoria> listaCat;// = new ArrayList();
     //private Calculadora calculadora;
-    private escritor escritor1;
+    private Escritor escritor1;
     private int gastoTotal;
     private int saldo;
     private String [] values;
@@ -19,7 +19,7 @@ public class Presupuesto
         listaCat = new ArrayList();//ArrayList<Categoria>();
         //calculadora = new Calculadora();
         persona = new Usuario();
-        escritor1 = new escritor();
+        escritor1 = new Escritor();
     }
     public void addCategoria(){   //para pruebas solamente
         listaCat.add(new Categoria("Alimentacion", 1500, 1200));
@@ -73,10 +73,9 @@ public class Presupuesto
         System.out.println("Gasto Total: " + gastoTotal);
     }
     public int ahorrar(){
-        calcularSaldo();
         int saldoAhorro = 0;
-        if(saldo>0){
-            saldoAhorro += saldo;
+        if(saldo > 0){
+            saldoAhorro =+ saldo;
         }else{
             System.out.println("Saldo de ahorro insuficiente");
         }
@@ -93,21 +92,18 @@ public class Presupuesto
     public ArrayList<Categoria> getCategoria() {
         return listaCat;
     }
-    
-    public void generarReporte(){
-        this.values = new String[listaCat.size()];
-        for (int i = 0; i < listaCat.size(); i++) {
-            values[i] = listaCat.get(i).toString();
-            //System.out.println(categoria.get(i).toString());
-        }   
-    }
-    
+
     public String[] getReporte(){
         return Arrays.copyOf(values, values.length);
     }
     
     public void generarReporte2() throws IOException{
         escritor1.Crear();
+        this.values = new String[listaCat.size()];
+        for (int i = 0; i < listaCat.size(); i++) {
+            values[i] = listaCat.get(i).toString();
+            //System.out.println(categoria.get(i).toString());
+        }  
         FileWriter fichero = new FileWriter(escritor1.ruta());
         for(int i = 0; i < values.length; i++){
             fichero.write(  values[i] + "\n" + "\t" );

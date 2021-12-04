@@ -2,7 +2,7 @@ import java.io.*;
 import java.util.*;
 
 
-public class escritor
+public class Escritor
 {
     private File fichero = new File (ruta());
     
