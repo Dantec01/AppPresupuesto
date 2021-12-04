@@ -73,10 +73,9 @@ public class Presupuesto
         System.out.println("Gasto Total: " + gastoTotal);
     }
     public int ahorrar(){
-        calcularSaldo();
         int saldoAhorro = 0;
-        if(saldo>0){
-            saldoAhorro += saldo;
+        if(saldo > 0){
+            saldoAhorro =+ saldo;
         }else{
             System.out.println("Saldo de ahorro insuficiente");
         }
