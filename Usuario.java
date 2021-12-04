@@ -1,16 +1,20 @@
+import java.util.*;
 public class Usuario
 {
-    private String usuario;
-    private String email;
-    public Usuario(String usuario, String email){
+    private static Scanner leer = new Scanner(System.in);
+    private static String usuario;
+    private static String emailA;
+    private static boolean emailAddressValido = false;
+    private static boolean email;
+    public Usuario(String usuario, String emailA){
         this.usuario = usuario;
-        this.email = email;
+        this.emailA = emailA;
     }
     
     public Usuario(){
         usuario = "Tomas";
-        email = "tomas@gmail.com";
-        setEmailAddres();
+        emailA = "tomas@gmail.com";
+        introducirUsuario();
     }
     public void setUsuario(String usuario){
         this.usuario = usuario;
@@ -20,46 +24,31 @@ public class Usuario
         return usuario;
     }
     
-    public void setEmail(String email){
-        this.email = email;
+    public void setEmailA(String emailA){
+        this.emailA = emailA;
     }
     
-    public String setEmail(){
-        return email;
+    public String getEmailA(){
+        return emailA;
     }
-    // Este metodo es getter (devuelve un valor) pero
-    // también es un setter (establece un valor)
-    // Este método comprueba si el DNI es correcto
-    public void setEmailAddres(){ //(String emailAddres){
-        //if(emailAddres.matches("^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$")){
-        if(email.matches("^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$")){
-            this.email = email;
-            //return true;
-            System.out.println("email correcto");
-        }else{
-            //return false;
-            System.out.println("email incorrecto");
-        }
-        
-    } 
+   
     private static boolean introducirUsuario(){
         //pidiendo nombre
         do{
             System.out.println("Introducir nombre de usuario:");
-            nombreUsuario = leer.nextLine();
-        }while(nombreUsuario.isEmpty());
-        
+            usuario = leer.nextLine();
+        }while(usuario.isEmpty());
+        //pidiendo correo electronico
         do{
             System.out.println("Introducir correo electronico de usuario:");
-            emailAddress = leer.nextLine();
-            if (nuevoUsuario.setEmailAddres(emailAddress)==false){
+            emailA = leer.nextLine();
+            if (emailA.matches("^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$")== false){
                 emailAddressValido = false;
                 System.out.println("La direccion de correo electronico no es valido");
             }else{ 
                 emailAddressValido = true;
             }
-        }while(emailAddress.isEmpty()|| emailAddressValido==false);
-        nuevoUsuario.setNombre(nombreUsuario);
-                return true;
+        }while(emailA.isEmpty()|| emailAddressValido==false);
+        return true;
     }
 }
