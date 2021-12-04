@@ -10,7 +10,7 @@ public class Usuario
         usuario = "Tomas";
         email = "tomas@gmail.com";
     }
-    
+
     public void setUsuario(String usuario){
         this.usuario = usuario;
     }

@@ -2,7 +2,7 @@
 import java.util.*;
 import java.io.*;
 //import java.text.SimpleDateFormat;
-public class App
+public class Presupuesto
 {
     private String nombre = "Expense Control";
     private Usuario persona;
@@ -13,14 +13,15 @@ public class App
     private int gastoTotal;
     private int saldo;
     private String [] values;
+    private Ahorro ahorro = new Ahorro();
     //private Fecha mes;
-    public App(){
-        listaCat = new ArrayList<Categoria>();
+    public Presupuesto(){
+        listaCat = new ArrayList();//ArrayList<Categoria>();
         calculadora = new Calculadora();
         persona = new Usuario();
         escritor1 = new escritor();
     }
-    public void addCategoria(){
+    public void addCategoria(){   //para pruebas solamente
         listaCat.add(new Categoria("Alimentacion", 1500, 1200));
         listaCat.add(new Categoria("Servicios", 300, 250));
         listaCat.add(new Categoria("Transporte", 300, 250));
@@ -39,6 +40,9 @@ public class App
     public void borrarElementoArray(int indice){
         listaCat.remove(indice);
         mostrar();
+    }
+    public void addCatManual(Categoria categoria){ //primero se crear un objeto categoria y se mete la cajita aqui
+        listaCat.add(categoria);
     }
     public void crearCategoria(String a, int b, int c){  //llama a la clase categoria y le pasa parametros
         listaCat.add(new Categoria(a,b,c));
@@ -68,13 +72,13 @@ public class App
         }
         System.out.println("Gasto Total: " + gastoTotal);
     }
-    public int ahorro(){
+    public int ahorrar(){
         calcularSaldo();
         int saldoAhorro = 0;
         if(saldo>0){
             saldoAhorro += saldo;
         }else{
-            
+            System.out.println("Saldo de ahorro insuficiente");
         }
         return saldoAhorro;
     }
