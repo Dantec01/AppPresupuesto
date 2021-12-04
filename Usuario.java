@@ -7,16 +7,10 @@ public class Usuario
         this.email = email;
     }
     
-    /*public Usuario(){
+    public Usuario(){
         usuario = "Tomas";
         email = "tomas@gmail.com";
-<<<<<<< HEAD
-    }*/
-    
-=======
     }
-
->>>>>>> 4b69565ec4fb3c40f4dc9b5bf6ca40cf89920cd7
     public void setUsuario(String usuario){
         this.usuario = usuario;
     }
@@ -32,5 +26,15 @@ public class Usuario
     public String setEmail(){
         return email;
     }
-    
+    // Este metodo es getter (devuelve un valor) pero
+    // también es un setter (establece un valor)
+    // Este método comprueba si el DNI es correcto
+    public boolean setEmailAddres(String emailAddres){
+        if(emailAddres.matches("^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$")){
+            this.email = email;
+            return true;
+        }else{
+            return false;
+        }
+    } 
 }
