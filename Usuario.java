@@ -10,8 +10,13 @@ public class Usuario
     /*public Usuario(){
         usuario = "Tomas";
         email = "tomas@gmail.com";
+<<<<<<< HEAD
     }*/
     
+=======
+    }
+
+>>>>>>> 4b69565ec4fb3c40f4dc9b5bf6ca40cf89920cd7
     public void setUsuario(String usuario){
         this.usuario = usuario;
     }

@@ -1,9 +1,17 @@
 
-public class Ahorro extends App
+public class Ahorro
 {
-    int saldoAhorro;
+    // instance variables - replace the example below with your own
+    private int saldoA;
+    private Presupuesto cuentaAhorro;
     
     public Ahorro(){
-    super.getSaldo();
+        cuentaAhorro = new Presupuesto();
+        saldoA = 0;
+    }
+
+    public void sampleMethod(){
+        saldoA = cuentaAhorro.getSaldo();
+        
     }
 }
