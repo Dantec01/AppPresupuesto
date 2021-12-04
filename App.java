@@ -1,5 +1,4 @@
-import java.util.ArrayList;
-<<<<<<< HEAD
+import java.util.*;
 
 public class App{
     public String nombreApp;
@@ -12,17 +11,13 @@ public class App{
     private static String nombreUsuario = "";
     private static String emailAddress = "";
     private static boolean emailAddressValido = false;
-    private static Cuenta nuevaCuenta;
+    
     public static void main(String [] args){
         //1. Crear el usuario, llamar al metodo introducirUsuario
-        /*if(introducirUsuario()){
-            //Creamos cuenta
-            nuevaCuenta = new Cuenta();
-        }*/
-=======
-//import java.text.SimpleDateFormat;
-public class App
-{
+        introducirUsuario();
+        //import java.text.SimpleDateFormat;
+    }
+    public App{
     private String nombre = "Survivor";
     private Usuario persona;
     private int presupuesto = 3500;
@@ -32,14 +27,13 @@ public class App
     private int saldo;
     private String [] values;
     //private Fecha mes;
+    }
     public App(){
         listaCat = new ArrayList<Categoria>();
         calculadora = new Calculadora();
         persona = new Usuario();
->>>>>>> 7c969eb60632c7c7d63a8cadc72ec9c8f6992c0d
     }
-<<<<<<< HEAD
-    
+
     private static boolean introducirUsuario(){
         //pidiendo nombre
         do{
@@ -58,9 +52,9 @@ public class App
                 emailAddressValido = true;
             }
         }while(emailAddress.isEmpty()|| emailAddressValido==false);
-        nuevoUsuario.setNombre(nombreUsuario);
+        nuevoUsuario.setUsuario(nombreUsuario);
         return true;
-=======
+    }  
     public void addCategoria(){
         listaCat.add(new Categoria("Alimentacion", 1000, 700));
         listaCat.add(new Categoria("Servicios", 300, 150));
@@ -72,8 +66,8 @@ public class App
             listaCat.get(i);
         }
         mostrar();
->>>>>>> 7c969eb60632c7c7d63a8cadc72ec9c8f6992c0d
     }
+    
     public void setNuevosDatos(int indice, int nuevo){
         listaCat.get(indice).setIngreso(nuevo);
         mostrar();
