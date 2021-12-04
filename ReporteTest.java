@@ -13,13 +13,13 @@ import org.junit.jupiter.api.Test;
  */
 public class ReporteTest
 {
-    private 
+    private Escritor escritor; 
     /**
      * Default constructor for test class ReporteTest
      */
     public ReporteTest()
     {
-        
+        Escritor escritor = new Escritor();
     }
 
     /**
@@ -41,4 +41,8 @@ public class ReporteTest
     public void tearDown()
     {
     }
+    
+    @Test
+    public void crearArchivo(){}
+    
 }
