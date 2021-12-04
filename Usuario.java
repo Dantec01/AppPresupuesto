@@ -5,7 +5,7 @@ public class Usuario
     private static String usuario;
     private static String emailA;
     private static boolean emailAddressValido = false;
-    private static boolean email;
+    
     public Usuario(String usuario, String emailA){
         this.usuario = usuario;
         this.emailA = emailA;
@@ -49,6 +49,7 @@ public class Usuario
                 emailAddressValido = true;
             }
         }while(emailA.isEmpty()|| emailAddressValido==false);
+        System.out.println("Datos correctamente ingresados");
         return true;
     }
 }
