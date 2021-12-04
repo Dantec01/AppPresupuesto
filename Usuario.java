@@ -49,6 +49,7 @@ public class Usuario
                 emailAddressValido = true;
             }
         }while(emailA.isEmpty()|| emailAddressValido==false);
+        System.out.println("Datos correctamente ingresados");
         return true;
     }
 }
