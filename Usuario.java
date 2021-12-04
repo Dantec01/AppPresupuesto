@@ -37,4 +37,24 @@ public class Usuario
             return false;
         }
     } 
+    private static boolean introducirUsuario(){
+        //pidiendo nombre
+        do{
+            System.out.println("Introducir nombre de usuario:");
+            nombreUsuario = leer.nextLine();
+        }while(nombreUsuario.isEmpty());
+        
+        do{
+            System.out.println("Introducir correo electronico de usuario:");
+            emailAddress = leer.nextLine();
+            if (nuevoUsuario.setEmailAddres(emailAddress)==false){
+                emailAddressValido = false;
+                System.out.println("La direccion de correo electronico no es valido");
+            }else{ 
+                emailAddressValido = true;
+            }
+        }while(emailAddress.isEmpty()|| emailAddressValido==false);
+        nuevoUsuario.setNombre(nombreUsuario);
+                return true;
+    }
 }
