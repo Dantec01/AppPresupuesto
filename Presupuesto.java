@@ -7,17 +7,14 @@ public class Presupuesto
     private String nombre = "Expense Control";
     private Usuario persona;
     private int presupuesto = 3500;
-    private ArrayList<Categoria> listaCat;// = new ArrayList();
-    //private Calculadora calculadora;
+    private ArrayList<Categoria> listaCat;
     private Archivo archivo;
     private int gastoTotal;
     private int saldo;
     private String [] values;
-    
     //private Fecha mes;
     public Presupuesto(){
         listaCat = new ArrayList();//ArrayList<Categoria>();
-        //calculadora = new Calculadora();
         persona = new Usuario();
         archivo = new Archivo();
     }

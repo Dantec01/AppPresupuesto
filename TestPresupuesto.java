@@ -1,42 +1,19 @@
 
-
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import java.util.ArrayList;
 
-/**
- * The test class PresupuestoTest.
- *
- * @author  (your name)
- * @version (a version number or a date)
- */
 public class TestPresupuesto
 {
-    /**
-     * Default constructor for test class PresupuestoTest
-     */
-    public TestPresupuesto()
-    {
+    Presupuesto presupuesto;
+    public TestPresupuesto(){
+        presupuesto = new Presupuesto(); 
     }
-
-    /**
-     * Sets up the test fixture.
-     *
-     * Called before every test case method.
-     */
-    @BeforeEach
-    public void setUp()
-    {
-    }
-
-    /**
-     * Tears down the test fixture.
-     *
-     * Called after every test case method.
-     */
-    @AfterEach
-    public void tearDown()
-    {
+    @Test
+    public void agregarPresupuesto(){
+        //Presupuesto presupuesto = new Presupuesto(); 
+        ArrayList<Categoria>listaCat = new ArrayList("Alimentacion", 1500, 1200);
     }
 }

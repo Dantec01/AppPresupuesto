@@ -17,8 +17,4 @@ public class TestCategoria
         assertEquals(1500, categoria.getIngreso());
         assertEquals(1200, categoria.getGasto());
     }
-    @Test
-    public void aCategoria(){
-        assertEquals("Alimentacion", 1500, 1200, categoria);
-    }
 }
