@@ -5,7 +5,7 @@ public class Usuario
     private static String usuario;
     private static String emailA;
     private static boolean emailAddressValido = false;
-    private static boolean email;
+    
     public Usuario(String usuario, String emailA){
         this.usuario = usuario;
         this.emailA = emailA;
