@@ -30,6 +30,12 @@ public class Presupuesto
         }
         mostrar();
     }
+    public int getCatoriaInd(int n){
+        for (int i = 0; i < listaCat.size(); i++){
+            listaCat.get(n);
+        }
+        return n;
+    }
     public void setNuevosDatos(int indice, int nuevo){
         listaCat.get(indice).setIngreso(nuevo);
         mostrar();
@@ -76,6 +82,7 @@ public class Presupuesto
         }else{
             System.out.println("Saldo de ahorro insuficiente");
         }
+        saldo = 0;
         return saldoAhorro;
     }
 
