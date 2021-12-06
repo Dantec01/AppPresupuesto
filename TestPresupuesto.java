@@ -10,9 +10,11 @@ public class TestPresupuesto
 {
     Presupuesto presupuesto;
     //ArrayList<Categoria> lista = new ArrayList<Categoria>();
+    //private ArrayList<Categoria> listaCat;
+    //Categoria categoria;
     public TestPresupuesto(){
         presupuesto = new Presupuesto(); 
-        
+        //listaCat = new ArrayList();
     }
     @Test
     public void testEmptyArrayList() 
@@ -36,31 +38,27 @@ public class TestPresupuesto
     }
     @Test
     public void modificarIngreso(){
-        //Categoria categoria1 = new Categoria ("Alimentacion", 1300, 1200);
+        Categoria categoria1 = new Categoria ("Alimentacion", 1500, 1200);
         ArrayList<Categoria> listaCat = new ArrayList<Categoria>();
-        //listaCat.add(categoria1);
-        presupuesto.crearCategoria("Alimentacion", 1500, 1200);
-        /*lista.add(new Categoria("Alimentacion", 1300, 1200));
-        lista.add(new Categoria("Alimentacion", 1300, 1200));
-        lista.add(new Categoria("Alimentacion", 1300, 1200));
-        lista.add(new Categoria("Alimentacion", 1300, 1200));*/
+        listaCat.add(categoria1);
         presupuesto.setNuevoIngreso(0, 1300);
-        
-        //assertEquals (lista.size(),1);
-        assertEquals(1300, listaCat.get(0).getIngreso());
+        int num = listaCat.get(0).getIngreso() ;
+        //assertEquals (listaCat.size(),6);
+        assertEquals(1300, num);
     }
     @Test
-    public void borrarElementoArray(){
+    public void borrarElemen(){
         //Categoria categoria2 = new Categoria ("Alimentacion", 1500, 1200);
-        ArrayList<Categoria> lista = new ArrayList<Categoria>();
+        ArrayList<Categoria> listaCat = new ArrayList<Categoria>();
         //lista.add(categoria2);
         //lista.clear();
         presupuesto.crearCategoria("Alimentacion", 1500, 1200);
+        presupuesto.crearCategoria("Servicios", 300, 250);
         //lista.add(new Categoria("Alimentacion", 1500, 1200));
         presupuesto.borrarElementoArray(0);
         //assertEquals (lista.size(),1);
        
-        assertTrue(lista.isEmpty());
+        assertFalse(listaCat.isEmpty());
     }
     
     @Test

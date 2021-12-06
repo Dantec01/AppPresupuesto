@@ -12,12 +12,13 @@ import org.junit.jupiter.api.Test;
  * @version (a version number or a date)
  */
 public class testArchivo
-{
+{ private Archivo archivo; 
     /**
-     * Default constructor for test class testArchivo
+     * Default constructor for test class ReporteTest
      */
     public testArchivo()
     {
+        archivo = new Archivo();
     }
 
     /**
@@ -38,5 +39,31 @@ public class testArchivo
     @AfterEach
     public void tearDown()
     {
+    }
+    
+    @Test
+    public void crearArchivo(){
+        boolean creado = archivo.crearArchivo("pruebas5");
+        assertEquals(true, creado);
+    }
+    
+        @Test
+    public void archivoYaCreado(){
+        boolean creado = archivo.crearArchivo("pruebas1");
+        assertEquals(false, creado);
+    }
+    
+    @Test
+    public void escrito() throws java.io.IOException{
+        String escribir = ("Se ha escrito en el archivo");
+        String escrito = archivo.escribir("pruebas3", escribir);
+        assertEquals("Se ha escrito en el archivo", escrito);
+    }
+    
+    @Test
+    public void leer() throws java.io.IOException{
+        String contenido = ("Se ha escrito en el archivo");
+        String leido = archivo.leerArchivo("pruebas3");
+        assertEquals(contenido, leido);
     }
 }

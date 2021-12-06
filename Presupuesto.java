@@ -31,6 +31,11 @@ public class Presupuesto
         }
         //mostrar();
     }
+    public int prueba(){
+        setNuevoIngreso(0, 1300);
+        int num = listaCat.get(0).getIngreso();
+        return num;
+    }
     public int getCatoriaInd(int n){
         for (int i = 0; i < listaCat.size(); i++){
             listaCat.get(n);
@@ -39,6 +44,7 @@ public class Presupuesto
     }
     public void setNuevoIngreso(int indice, int nuevo){
         listaCat.get(indice).setIngreso(nuevo);
+        for(Categoria e: listaCat){}
         //mostrar();
     }
     public void setNuevoGasto(int indice, int nuevo){
@@ -47,7 +53,8 @@ public class Presupuesto
     }
     public void borrarElementoArray(int indice){
         listaCat.remove(indice);
-        mostrar();
+        for(Categoria e: listaCat){}
+        //mostrar();
     }
     public void addCatManual(Categoria categoria){ //primero se crear un objeto categoria y se mete la cajita aqui
         listaCat.add(categoria);
@@ -64,7 +71,6 @@ public class Presupuesto
         for (int i = 0; i < listaCat.size(); i++){
             saldoPorCategoria = ((listaCat.get(i).getIngreso()) - (listaCat.get(i).getGasto()));
             saldo += saldoPorCategoria;
-            System.out.println(saldoPorCategoria);
         }
         //calculator.setGastoTotal(aux);
         System.out.println("Saldo: " + saldo);
@@ -117,7 +123,7 @@ public class Presupuesto
     }
     
     public void generarReporte2() throws IOException{
-        archivo.archivoCrear();
+        archivo.crearArchivo("prueba");
         this.values = new String[listaCat.size()];
         for (int i = 0; i < listaCat.size(); i++) {
             values[i] = listaCat.get(i).toString();
