@@ -26,10 +26,10 @@ public class Presupuesto
         listaCat.add(new Categoria("Entretenimiento", 200, 150));
         listaCat.add(new Categoria("Alquiler", 1000, 1000));
         listaCat.add(new Categoria("Internet", 200, 190));
-        for (int i = 0; i < listaCat.size(); i++){
+        /*for (int i = 0; i < listaCat.size(); i++){
             listaCat.get(i);
         }
-        //mostrar();
+        //mostrar();*/
     }
     public int prueba(){
         setNuevoIngreso(0, 1300);
@@ -44,8 +44,6 @@ public class Presupuesto
     }
     public void setNuevoIngreso(int indice, int nuevo){
         listaCat.get(indice).setIngreso(nuevo);
-        for(Categoria e: listaCat){}
-        //mostrar();
     }
     public void setNuevoGasto(int indice, int nuevo){
         listaCat.get(indice).setGasto(nuevo);
@@ -53,8 +51,6 @@ public class Presupuesto
     }
     public void borrarElementoArray(int indice){
         listaCat.remove(indice);
-        for(Categoria e: listaCat){}
-        //mostrar();
     }
     public void addCatManual(Categoria categoria){ //primero se crear un objeto categoria y se mete la cajita aqui
         listaCat.add(categoria);
