@@ -10,8 +10,9 @@ public class Presupuesto
     private ArrayList<Categoria> listaCat;
     private Archivo archivo;
     private int gastoTotal;
-    private int saldo;
+    private static int saldo;
     private String [] values;
+    private static int saldoAhorro = 0;
     //private Fecha mes;
     public Presupuesto(){
         listaCat = new ArrayList();//ArrayList<Categoria>();
@@ -28,7 +29,7 @@ public class Presupuesto
         for (int i = 0; i < listaCat.size(); i++){
             listaCat.get(i);
         }
-        mostrar();
+        //mostrar();
     }
     public int getCatoriaInd(int n){
         for (int i = 0; i < listaCat.size(); i++){
@@ -36,9 +37,13 @@ public class Presupuesto
         }
         return n;
     }
-    public void setNuevosDatos(int indice, int nuevo){
+    public void setNuevoIngreso(int indice, int nuevo){
         listaCat.get(indice).setIngreso(nuevo);
-        mostrar();
+        //mostrar();
+    }
+    public void setNuevoGasto(int indice, int nuevo){
+        listaCat.get(indice).setGasto(nuevo);
+        //mostrar();
     }
     public void borrarElementoArray(int indice){
         listaCat.remove(indice);
@@ -54,7 +59,7 @@ public class Presupuesto
         System.out.println(e);
         }
     }
-    public void calcularSaldo(){
+    public int calcularSaldo(){
         int saldoPorCategoria = 0;
         for (int i = 0; i < listaCat.size(); i++){
             saldoPorCategoria = ((listaCat.get(i).getIngreso()) - (listaCat.get(i).getGasto()));
@@ -63,24 +68,34 @@ public class Presupuesto
         }
         //calculator.setGastoTotal(aux);
         System.out.println("Saldo: " + saldo);
+        return saldo;
     }
     public int getSaldo(){
         return saldo;    
     }
-    public void calcularGastoTotal(){
+    public int calcularGastoTotal(){
         for (int i = 0; i < listaCat.size(); i++){
             int gastoPorCategoria = (listaCat.get(i).getGasto());
             gastoTotal += gastoPorCategoria;
             System.out.println(gastoPorCategoria);
         }
         System.out.println("Gasto Total: " + gastoTotal);
+        return gastoTotal;
     }
-    public int ahorrar(){
-        int saldoAhorro = 0;
+    public void iterator(){
+        for (int i = 0; i < listaCat.size(); i++){
+            int gastoPorCategoria = (listaCat.get(i).getGasto());
+            listaCat.get(i);
+        }
+    }
+    public int gastoTotal(){
+        return gastoTotal;
+    }
+    public int ahorro(){
         if(saldo > 0){
             saldoAhorro =+ saldo;
         }else{
-            System.out.println("Saldo de ahorro insuficiente");
+            System.out.println("Saldo para ahorrar insuficiente");
         }
         saldo = 0;
         return saldoAhorro;

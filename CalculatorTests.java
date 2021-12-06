@@ -4,10 +4,10 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 public class CalculatorTests{
-    Calculadora calculadora;
+    Calculator calculadora;
     @BeforeEach
     public void setUp(){
-        calculadora = new Calculadora (-100,100);
+        calculadora = new Calculator (-100,100);
     }
     @Test
     public void SetGetUpperLimit(){
