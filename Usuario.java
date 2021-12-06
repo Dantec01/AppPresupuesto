@@ -14,7 +14,8 @@ public class Usuario
     public Usuario(){
         usuario = "Tomas";
         emailA = "tomas@gmail.com";
-        //introducirUsuario();
+        usuarioValido();
+        emailValido();
     }
     public void setUsuario(String usuario){
         this.usuario = usuario;
@@ -32,13 +33,7 @@ public class Usuario
         return emailA;
     }
    
-    private static boolean introducirUsuario(){
-        //pidiendo nombre
-        do{
-            System.out.println("Introducir nombre de usuario:");
-            usuario = leer.nextLine();
-        }while(usuario.isEmpty());
-        //pidiendo correo electronico
+    public boolean emailValido(){
         do{
             System.out.println("Introducir correo electronico de usuario:");
             emailA = leer.nextLine();
@@ -49,7 +44,17 @@ public class Usuario
                 emailAddressValido = true;
             }
         }while(emailA.isEmpty()|| emailAddressValido==false);
-        System.out.println("Datos correctamente ingresados");
         return true;
     }
+    
+    public boolean usuarioValido(){
+        //pidiendo nombre
+        do{
+            System.out.println("Introducir nombre de usuario:");
+            usuario = leer.nextLine();
+        }while(usuario.isEmpty());
+        return true;
+    }
+    
+    
 }

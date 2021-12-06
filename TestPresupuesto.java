@@ -9,12 +9,20 @@ import java.util.ArrayList;
 public class TestPresupuesto
 {
     Presupuesto presupuesto;
+    CajaAhorro cajaAhorro;
     //ArrayList<Categoria> lista = new ArrayList<Categoria>();
     //private ArrayList<Categoria> listaCat;
     //Categoria categoria;
     public TestPresupuesto(){
         presupuesto = new Presupuesto(); 
+        cajaAhorro = new CajaAhorro();
         //listaCat = new ArrayList();
+        presupuesto.crearCategoria("Alimentacion", 1500, 1200);
+        presupuesto.crearCategoria("Servicios", 300, 250);
+        presupuesto.crearCategoria("Transporte", 300, 250);
+        presupuesto.crearCategoria("Entretenimiento", 200, 150);
+        presupuesto.crearCategoria("Alquiler", 1000, 1000);
+        presupuesto.crearCategoria("Internet", 200, 190);
     }
     @Test
     public void testEmptyArrayList() 
@@ -31,7 +39,7 @@ public class TestPresupuesto
     }
     @Test
     public void modificarIngreso(){
-        presupuesto.crearCategoria("Alimentacion", 1500, 1200);
+        //presupuesto.crearCategoria("Alimentacion", 1500, 1200);
         presupuesto.setNuevoIngreso(0, 1300);
         int num = presupuesto.getIngreso(0);
         
@@ -40,7 +48,7 @@ public class TestPresupuesto
     @Test
     public void borrarElemen(){
         ArrayList<Categoria> listaCat = new ArrayList<Categoria>();
-        presupuesto.crearCategoria("Alimentacion", 1500, 1200);
+        //presupuesto.crearCategoria("Alimentacion", 1500, 1200);
 
         presupuesto.borrarElementoArray(0);
     
@@ -51,15 +59,19 @@ public class TestPresupuesto
     public void testCalcularGastoTotal(){
         ArrayList<Categoria> lista = new ArrayList<Categoria>();
      
-        presupuesto.crearCategoria("Alimentacion", 1500, 1200);
+        /*presupuesto.crearCategoria("Alimentacion", 1500, 1200);
         presupuesto.crearCategoria("Servicios", 300, 250);
         presupuesto.crearCategoria("Transporte", 300, 250);
         presupuesto.crearCategoria("Entretenimiento", 200, 150);
         presupuesto.crearCategoria("Alquiler", 1000, 1000);
-        presupuesto.crearCategoria("Internet", 200, 190);
+        presupuesto.crearCategoria("Internet", 200, 190);*/
         
         presupuesto.calcularGastoTotal();
         
         assertEquals(3040, presupuesto.gastoTotal());
     }
+    
+
+    
+
 }
