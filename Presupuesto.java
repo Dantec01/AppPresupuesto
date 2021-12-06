@@ -43,6 +43,9 @@ public class Presupuesto
         return n;
     }
     public void setNuevoIngreso(int indice, int nuevo){
+        for(Categoria e: listaCat){
+        System.out.println(e);
+        }
         listaCat.get(indice).setIngreso(nuevo);
     }
     public void setNuevoGasto(int indice, int nuevo){
