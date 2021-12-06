@@ -26,6 +26,7 @@ public class Presupuesto
         listaCat.add(new Categoria("Entretenimiento", 200, 150));
         listaCat.add(new Categoria("Alquiler", 1000, 1000));
         listaCat.add(new Categoria("Internet", 200, 190));
+        listaCat.add(new Categoria("Alquiler", 1000, 1000));
         /*for (int i = 0; i < listaCat.size(); i++){
             listaCat.get(i);
         }*/
@@ -89,6 +90,18 @@ public class Presupuesto
         System.out.println("Gasto Total: " + gastoTotal);
         return gastoTotal;
     }
+    public void exceso(){
+        int exceso = 0;
+        if(gastoTotal > presupuesto){
+            exceso = gastoTotal - presupuesto;
+            if(exceso < saldo){
+                saldo = saldo - exceso;
+            }else{
+                saldoAhorro = saldoAhorro + saldo - exceso;
+            }
+        }else{}
+    }
+    
     public void iterator(){
         for (int i = 0; i < listaCat.size(); i++){
             int gastoPorCategoria = (listaCat.get(i).getGasto());
