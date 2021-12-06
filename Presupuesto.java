@@ -28,13 +28,11 @@ public class Presupuesto
         listaCat.add(new Categoria("Internet", 200, 190));
         /*for (int i = 0; i < listaCat.size(); i++){
             listaCat.get(i);
-        }
-        //mostrar();*/
+        }*/
+        mostrar();
     }
-    public int prueba(){
-        setNuevoIngreso(0, 1300);
-        int num = listaCat.get(0).getIngreso();
-        return num;
+    public int tamanioLista(){
+        return listaCat.size();
     }
     public int getCatoriaInd(int n){
         for (int i = 0; i < listaCat.size(); i++){
