@@ -59,7 +59,6 @@ public class Presupuesto
         for (int i = 0; i < listaCat.size(); i++){
             saldoPorCategoria = ((listaCat.get(i).getIngreso()) - (listaCat.get(i).getGasto()));
             saldo += saldoPorCategoria;
-            System.out.println(saldoPorCategoria);
         }
         //calculator.setGastoTotal(aux);
         System.out.println("Saldo: " + saldo);
