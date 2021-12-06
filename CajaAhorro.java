@@ -1,20 +1,25 @@
 public class CajaAhorro
 {
-    Presupuesto presupuesto;
-    private int saldo;
-    private int caja;
+    private int saldoRecibido;
+    private int caja = 0;
+    private boolean llena;
     public CajaAhorro()
     {
-        presupuesto = new Presupuesto();
     }
     
-    public int saldo(int saldo){
-        this.saldo = saldo;
-        return saldo;
+    public void setSaldo(int saldo){
+        saldoRecibido = saldo;
     }
     
-    public void caja(){
-        caja = saldo;
-        caja += saldo;
+    public void guardarCaja(){
+        caja += saldoRecibido;
+    }
+    
+    public boolean estadoCaja(){
+        llena = false;
+        if(caja > 0){
+            llena = true;
+        }
+        return llena;
     }
 }

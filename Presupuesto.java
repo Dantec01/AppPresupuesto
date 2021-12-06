@@ -147,4 +147,8 @@ public class Presupuesto
         buffer.close();
     
     }
+    
+    public void limpiarArraylist(){
+        listaCat.clear();    
+    }
 }
