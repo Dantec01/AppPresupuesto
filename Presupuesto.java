@@ -102,7 +102,7 @@ public class Presupuesto
     }
     
     public void generarReporte2() throws IOException{
-        archivo.archivoCrear();
+        archivo.crearArchivo("prueba");
         this.values = new String[listaCat.size()];
         for (int i = 0; i < listaCat.size(); i++) {
             values[i] = listaCat.get(i).toString();
