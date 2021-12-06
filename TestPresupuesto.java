@@ -16,7 +16,7 @@ public class TestPresupuesto
         presupuesto = new Presupuesto(); 
         //listaCat = new ArrayList();
     }
-    /*@Test
+    @Test
     public void testEmptyArrayList() 
     {
         ArrayList<Categoria> lista = new ArrayList<Categoria>();
@@ -35,20 +35,15 @@ public class TestPresupuesto
         //assertEquals(categoria1,presupuesto.getCategoria().get(0));
         assertEquals(categoria1,lista.get(0));
 
-    }*/
+    }
     @Test
     public void modificarIngreso(){
-        ArrayList<Categoria> listaCat = new ArrayList<Categoria>();
-        listaCat.add(new Categoria("Alimentacion", 1500, 1200));
-        //lista.add(categoria2);
-        //lista.clear();
-        //presupuesto.crearCategoria("Alimentacion", 1500, 1200);
+        presupuesto.crearCategoria("Alimentacion", 1500, 1200);
         presupuesto.setNuevoIngreso(0, 1300);
-        int num = listaCat.get(0).getIngreso() ;
-        //assertEquals (listaCat.size(),6);
+        int num = presupuesto.getIngreso(0);
         assertEquals(1300, num);
     }
-    /*@Test
+    @Test
     public void borrarElemen(){
         //Categoria categoria2 = new Categoria ("Alimentacion", 1500, 1200);
         ArrayList<Categoria> listaCat = new ArrayList<Categoria>();
@@ -82,5 +77,5 @@ public class TestPresupuesto
         presupuesto.calcularGastoTotal();
         
         assertEquals(3040, presupuesto.gastoTotal());
-    }*/
+    }
 }

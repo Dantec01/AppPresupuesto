@@ -52,6 +52,10 @@ public class Presupuesto
         listaCat.get(indice).setGasto(nuevo);
         //mostrar();
     }
+    public int getIngreso(int indice){
+        int intIngresoCat = listaCat.get(indice).getIngreso();
+        return intIngresoCat;
+    }
     public void borrarElementoArray(int indice){
         listaCat.remove(indice);
     }
