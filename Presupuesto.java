@@ -11,12 +11,13 @@ public class Presupuesto
     private static int saldo;
     private String [] values;
     private static int saldoAhorro = 0;
-    public Presupuesto(){
+    public Presupuesto(){    //int presupuesto){
         listaCategorias = new ArrayList();
         persona = new Usuario();
         archivo = new Archivo();
+        //this.presupuesto = presupuesto;
     }
-    public void addCategoria(){   //para pruebas solamente
+    public void addCategoria2(){   //para pruebas solamente
         listaCategorias.add(new Categoria("Alimentacion", 1500, 1200));
         listaCategorias.add(new Categoria("Servicios", 300, 250));
         listaCategorias.add(new Categoria("Transporte", 300, 250));
@@ -26,8 +27,8 @@ public class Presupuesto
         listaCategorias.add(new Categoria("Alquiler", 1000, 1000));
         mostrar();
     }
-    public int tamanioLista(){
-        return listaCategorias.size();
+    public void setPresupuesto(int presupuesto){
+        this.presupuesto = presupuesto;
     }
     public int getCatoriaInd(int n){
         for (int i = 0; i < listaCategorias.size(); i++){
@@ -36,14 +37,12 @@ public class Presupuesto
         return n;
     }
     public void setNuevoIngreso(int indice, int nuevo){
-        for(Categoria e: listaCategorias){
-        System.out.println(e);
-        }
         listaCategorias.get(indice).setIngreso(nuevo);
+        mostrar();
     }
     public void setNuevoGasto(int indice, int nuevo){
         listaCategorias.get(indice).setGasto(nuevo);
-        //mostrar();
+        mostrar();
     }
     public int getIngreso(int indice){
         int intIngresoCat = listaCategorias.get(indice).getIngreso();
@@ -61,12 +60,14 @@ public class Presupuesto
         for(Categoria e: listaCategorias){
         System.out.println(e);
         }
+        gastoExcedido();
     }
     public int calcularSaldo(){
         int saldoPorCategoria = 0;
         for (int i = 0; i < listaCategorias.size(); i++){
             saldoPorCategoria = ((listaCategorias.get(i).getIngreso()) - (listaCategorias.get(i).getGasto()));
             saldo += saldoPorCategoria;
+            System.out.println(listaCategorias.get(i) + "\t" + saldoPorCategoria);
         }
         //calculator.setGastoTotal(aux);
         System.out.println("Saldo: " + saldo);
@@ -84,17 +85,6 @@ public class Presupuesto
         System.out.println("Gasto Total: " + gastoTotal);
         return gastoTotal;
     }
-    public void exceso(){
-        int exceso = 0;
-        if(gastoTotal > presupuesto){
-            exceso = gastoTotal - presupuesto;
-            if(exceso < saldo){
-                saldo = saldo - exceso;
-            }else{
-                saldoAhorro = saldoAhorro + saldo - exceso;
-            }
-        }else{}
-    }
     public int gastoTotal(){
         return gastoTotal;
     }
@@ -107,7 +97,23 @@ public class Presupuesto
         saldo = 0;
         return saldoAhorro;
     }
-
+    public String gastoExcedido(){
+        int gastoExcedido = 0;
+        String respuesta;
+        if(gastoTotal > presupuesto){
+            gastoExcedido = gastoTotal - presupuesto;
+            if(gastoExcedido < saldoAhorro){
+                saldoAhorro = saldoAhorro - gastoExcedido;
+                respuesta = "Gastos cubiertos por el saldo de ahorro: -" + saldoAhorro;
+            }else{
+                gastoExcedido = gastoExcedido - saldoAhorro;
+                respuesta = "Fondos insuficientes - Exceso de gastos: " + gastoExcedido;
+            }
+        }else{
+            respuesta = "Correcto";
+        }
+        return respuesta;
+    }
     public void mostrar(){
         System.out.println("Ind" + "\t" + "Categoria   " + "Presupuesto  " + "gasto" + "\n" + "\t");
         for (int i = 0; i < listaCategorias.size(); i++){
@@ -115,14 +121,12 @@ public class Presupuesto
             System.out.println((i) + "\t" + listaCategorias.get(i).toString());
         }
     }
-    public ArrayList<Categoria> getCategoria() {
+    private ArrayList<Categoria> getCategoria() {
         return listaCategorias;
     }
-
     public String[] getReporte(){
         return Arrays.copyOf(values, values.length);
     }
-    
     public void generarReporte2() throws IOException{
         archivo.crearArchivo("prueba");
         this.values = new String[listaCategorias.size()];
