@@ -11,12 +11,12 @@ import org.junit.jupiter.api.Test;
  * @author  (your name)
  * @version (a version number or a date)
  */
-public class testArchivo
+public class TestArchivo
 { private Archivo archivo; 
     /**
      * Default constructor for test class ReporteTest
      */
-    public testArchivo()
+    public TestArchivo()
     {
         archivo = new Archivo();
     }

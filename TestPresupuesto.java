@@ -9,13 +9,13 @@ import java.util.ArrayList;
 public class TestPresupuesto
 {
     Presupuesto presupuesto;
-    CajaAhorro cajaAhorro;
+    //CajaAhorro cajaAhorro;
     //ArrayList<Categoria> lista = new ArrayList<Categoria>();
     //private ArrayList<Categoria> listaCat;
     //Categoria categoria;
     public TestPresupuesto(){
         presupuesto = new Presupuesto(); 
-        cajaAhorro = new CajaAhorro();
+        //cajaAhorro = new CajaAhorro();
         //listaCat = new ArrayList();
         presupuesto.crearCategoria("Alimentacion", 1500, 1200);
         presupuesto.crearCategoria("Servicios", 300, 250);
