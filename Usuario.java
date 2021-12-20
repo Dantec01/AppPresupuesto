@@ -14,8 +14,8 @@ public class Usuario
     public Usuario(){
         usuario = "Tomas";
         emailA = "tomas@gmail.com";
-        usuarioValido();
-        emailValido();
+        //usuarioValido();
+        //emailValido();
     }
     public void setUsuario(String usuario){
         this.usuario = usuario;

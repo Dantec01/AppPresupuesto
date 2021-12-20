@@ -2,20 +2,28 @@ import java.util.*;
 import java.io.*;
 public class Presupuesto
 {
-    private String nombre = "Expense Control";
     private Usuario persona;
-    private int presupuesto = 3500;
+    private int presupuesto = 0;
+    private int gastoTotal;
+    private int saldo;
+    private int saldoAhorro = 0;
     private ArrayList<Categoria> listaCategorias;
     private Archivo archivo;
-    private int gastoTotal;
-    private static int saldo;
     private String [] values;
-    private static int saldoAhorro = 0;
-    public Presupuesto(){    //int presupuesto){
+    public Presupuesto(int presupuesto){
         listaCategorias = new ArrayList();
         persona = new Usuario();
         archivo = new Archivo();
-        //this.presupuesto = presupuesto;
+        this.presupuesto = presupuesto;
+    }
+    public void setPresupuesto(int presupuesto){
+        this.presupuesto = presupuesto;
+    }
+    public String addCatManual(Categoria categoria){                         //primero se crear un objeto categoria y se mete la cajita aqui
+        listaCategorias.add(categoria);
+        mostrar();
+        calcularGastoTotal();
+        return gastoExcedido();
     }
     public void addCategoria2(){   //para pruebas solamente
         listaCategorias.add(new Categoria("Alimentacion", 1500, 1200));
@@ -24,11 +32,48 @@ public class Presupuesto
         listaCategorias.add(new Categoria("Entretenimiento", 200, 150));
         listaCategorias.add(new Categoria("Alquiler", 1000, 1000));
         listaCategorias.add(new Categoria("Internet", 200, 190));
-        listaCategorias.add(new Categoria("Alquiler", 1000, 1000));
+        //listaCategorias.add(new Categoria("Estudios", 400, 500));
         mostrar();
     }
-    public void setPresupuesto(int presupuesto){
-        this.presupuesto = presupuesto;
+    public String crearCategoria(String a, int b, int c){  //llama a la clase categoria y le pasa parametros
+        listaCategorias.add(new Categoria(a,b,c));
+        mostrar();
+        calcularGastoTotal();
+        return gastoExcedido();
+    }
+    public int calcularGastoTotal(){
+        gastoTotal = 0;
+        for (int i = 0; i < listaCategorias.size(); i++){
+            int gastoPorCategoria = (listaCategorias.get(i).getGasto());
+            gastoTotal += gastoPorCategoria;
+            //System.out.println(gastoPorCategoria);
+        }
+        //System.out.println("Gasto Total: " + gastoTotal);
+        return gastoTotal;
+    }
+    public int calcularSaldo(){
+        saldo = 0;
+        int saldoPorCategoria = 0;
+        if(gastoTotal < presupuesto){
+            for (int i = 0; i < listaCategorias.size(); i++){
+                saldoPorCategoria = ((listaCategorias.get(i).getIngreso()) - (listaCategorias.get(i).getGasto()));
+                saldo += saldoPorCategoria;
+                System.out.println(listaCategorias.get(i) + "\t" + saldoPorCategoria);
+            }
+            System.out.println("Saldo: " + saldo);
+        }
+        return saldo;
+    }
+    public String gastoExcedido(){
+        int gastoExcedido = 0;
+        String respuesta;
+        if(gastoTotal > presupuesto){
+            gastoExcedido = gastoTotal - presupuesto;
+            respuesta = "Presupuesto Excedido con: " + gastoExcedido + " bs.";
+        }else{
+            respuesta = "Correcto";
+        }
+        return respuesta;
     }
     public int getCatoriaInd(int n){
         for (int i = 0; i < listaCategorias.size(); i++){
@@ -51,42 +96,16 @@ public class Presupuesto
     public void borrarElementoArray(int indice){
         listaCategorias.remove(indice);
     }
-    public void addCatManual(Categoria categoria){ //primero se crear un objeto categoria y se mete la cajita aqui
-        listaCategorias.add(categoria);
-    }
-    public void crearCategoria(String a, int b, int c){  //llama a la clase categoria y le pasa parametros
-        listaCategorias.add(new Categoria(a,b,c));
-        System.out.println("Categoria    " + "Presupuesto  " + "gasto" + "\n" + "\t");
-        for(Categoria e: listaCategorias){
-        System.out.println(e);
-        }
-        gastoExcedido();
-    }
-    public int calcularSaldo(){
-        int saldoPorCategoria = 0;
-        for (int i = 0; i < listaCategorias.size(); i++){
-            saldoPorCategoria = ((listaCategorias.get(i).getIngreso()) - (listaCategorias.get(i).getGasto()));
-            saldo += saldoPorCategoria;
-            System.out.println(listaCategorias.get(i) + "\t" + saldoPorCategoria);
-        }
-        //calculator.setGastoTotal(aux);
-        System.out.println("Saldo: " + saldo);
-        return saldo;
-    }
+    
     public int getSaldo(){
         return saldo;    
     }
-    public int calcularGastoTotal(){
-        for (int i = 0; i < listaCategorias.size(); i++){
-            int gastoPorCategoria = (listaCategorias.get(i).getGasto());
-            gastoTotal += gastoPorCategoria;
-            System.out.println(gastoPorCategoria);
-        }
-        System.out.println("Gasto Total: " + gastoTotal);
-        return gastoTotal;
-    }
+    
     public int gastoTotal(){
         return gastoTotal;
+    }
+    public void setGastoTotal(int gastoTotal){
+        this.gastoTotal = gastoTotal;
     }
     public int ahorro(){
         if(saldo > 0){
@@ -97,29 +116,16 @@ public class Presupuesto
         saldo = 0;
         return saldoAhorro;
     }
-    public String gastoExcedido(){
-        int gastoExcedido = 0;
-        String respuesta;
-        if(gastoTotal > presupuesto){
-            gastoExcedido = gastoTotal - presupuesto;
-            if(gastoExcedido < saldoAhorro){
-                saldoAhorro = saldoAhorro - gastoExcedido;
-                respuesta = "Gastos cubiertos por el saldo de ahorro: -" + saldoAhorro;
-            }else{
-                gastoExcedido = gastoExcedido - saldoAhorro;
-                respuesta = "Fondos insuficientes - Exceso de gastos: " + gastoExcedido;
-            }
-        }else{
-            respuesta = "Correcto";
-        }
-        return respuesta;
-    }
     public void mostrar(){
+        System.out.println("Presupuesto: " + presupuesto);
+        System.out.println("---------------------------------------------------");
         System.out.println("Ind" + "\t" + "Categoria   " + "Presupuesto  " + "gasto" + "\n" + "\t");
         for (int i = 0; i < listaCategorias.size(); i++){
             //System.out.println(listaCategorias.get(i)+"\t");
             System.out.println((i) + "\t" + listaCategorias.get(i).toString());
         }
+        System.out.println("---------------------------------------------------");
+        System.out.println("Gasto total: " + gastoTotal + "\t"  + "Saldo: " + saldo + "\t"  + "Ahorro: " + saldoAhorro);
     }
     private ArrayList<Categoria> getCategoria() {
         return listaCategorias;

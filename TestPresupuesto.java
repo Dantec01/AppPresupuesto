@@ -14,7 +14,7 @@ public class TestPresupuesto
     //private ArrayList<Categoria> listaCat;
     //Categoria categoria;
     public TestPresupuesto(){
-        presupuesto = new Presupuesto(); 
+        presupuesto = new Presupuesto(3500); 
         //cajaAhorro = new CajaAhorro();
         //listaCat = new ArrayList();
         presupuesto.crearCategoria("Alimentacion", 1500, 1200);

@@ -7,7 +7,7 @@
  */
 public class CajaAhorrativa
 {
-    Presupuesto presupuesto = new Presupuesto();
+    Presupuesto presupuesto = new Presupuesto(3500);
     
     public CajaAhorrativa()
     {
